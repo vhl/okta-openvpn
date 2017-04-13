@@ -1,5 +1,9 @@
 # Introduction
 
+**Important!** OpenVPN natively supports RADIUS, and integrating
+OpenVPN with Okta via RADIUS is Okta's recommended method. Please
+see the [Okta help site for RADIUS information](https://help.okta.com/en/prod/Content/Topics/Directory/Agent_Installing_the_Okta_Radius_Agent.htm).
+
 This is a plugin for OpenVPN (Community Edition) that authenticates users directly against Okta, with support for MFA.
 
     Note: This plugin does not work with OpenVPN Access Server (OpenVPN-AS)

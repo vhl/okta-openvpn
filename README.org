@@ -9,6 +9,10 @@
 # Turn of subscript parsing: http://super-user.org/wordpress/2012/02/02/how-to-get-rid-of-subscript-annoyance-in-org-mode/comment-page-1/
 #+OPTIONS: ^:{}
 * Introduction
+  *Important!* OpenVPN natively supports RADIUS, and integrating
+  OpenVPN with Okta via RADIUS is Okta's recommended method. Please
+  see the [[https://help.okta.com/en/prod/Content/Topics/Directory/Agent_Installing_the_Okta_Radius_Agent.htm][Okta help site for RADIUS information]].
+
   This is a plugin for OpenVPN (Community Edition) that authenticates
   users directly against Okta, with support for MFA.
 
