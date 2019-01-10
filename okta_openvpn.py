@@ -238,6 +238,7 @@ class OktaAPIAuth(object):
                              "with MFA via Okta API", self.username)
                     return True
             if 'errorCauses' in res:
+		log.error('MFA error response: %s', res)
                 msg = res['errorCauses'][0]['errorSummary']
                 log.debug('User %s MFA token authentication failed: %s',
                           self.username,
