@@ -238,7 +238,7 @@ class OktaAPIAuth(object):
                              "with MFA via Okta API", self.username)
                     return True
             if 'errorCauses' in res:
-		log.error('MFA error response: %s', res)
+				log.error('MFA error response: %s', res)
                 msg = res['errorCauses'][0]['errorSummary']
                 log.debug('User %s MFA token authentication failed: %s',
                           self.username,
@@ -318,20 +318,10 @@ class OktaOpenVPNValidator(object):
         if 'okta_token' not in self.site_config:
             log.critical('OKTA_TOKEN not defined in configuration')
             return False
-        # Taken from a validated VPN client-side SSL certificate
-        username = self.env.get('common_name')
+        username = self.env.get('username')
         password = self.env.get('password')
         client_ipaddr = self.env.get('untrusted_ip', '0.0.0.0')
-        # Note:
-        #   username_trusted is True if the username comes from a certificate
-        #
-        #   Meaning, if self.common_name is NOT set, but self.username IS,
-        #   then self.username_trusted will be False
-        if username is not None:
-            self.username_trusted = True
-        else:
-            # This is set according to what the VPN client has sent us
-            username = self.env.get('username')
+		self.username_trusted = True
         if self.always_trust_username:
             self.username_trusted = self.always_trust_username
         if self.username_suffix and '@' not in username:
