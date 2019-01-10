@@ -48,10 +48,9 @@ log.addHandler(syslog)
 # errlog = logging.StreamHandler()
 # errlog.setFormatter(logging.Formatter(syslog_fmt))
 # log.addHandler(errlog)
-# # Uncomment to enable logging to a file
-# filelog = logging.FileHandler('/tmp/okta_openvpn.log')
-# filelog.setFormatter(logging.Formatter(syslog_fmt))
-# log.addHandler(filelog)
+filelog = logging.FileHandler('/tmp/okta_openvpn.log')
+filelog.setFormatter(logging.Formatter(syslog_fmt))
+log.addHandler(filelog)
 
 
 class PinError(Exception):
